@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <title>Enxurrada</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="application/xml;charset=utf-8" />
+        <link rel="shortcut icon" href="view/favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="../../lib/Brython2.2.1/brython.js"></script>
+        <script type="text/python">
+            from enxurrada import main
+            from browser import svg, document, html, ajax, alert
+
+
+            class Browser:
+                svg, document, html, ajax, alert = svg, document, html, ajax, alert
+            enxurrada = main(Browser)
+
+        </script>
+    </head>
+    <body onLoad="brython(1, {static_stdlib_import: true})" class="main">
+        <div id="pydiv"></div>
+    </body>
+</html>
